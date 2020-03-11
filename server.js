@@ -20,7 +20,9 @@ db.on('open', () => {
 
 
 
-
+app.get('/', (req, res) => {
+  res.send("jesus fucking christ")
+})
 
 
 
