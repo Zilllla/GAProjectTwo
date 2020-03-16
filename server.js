@@ -1,7 +1,7 @@
-const Film = require('./models/films.js');
-const Blog = require('./models/blogs.js')
+
 const express = require('express');
 const app = express();
+const alfred = require('./models/alfred.js');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
@@ -10,17 +10,15 @@ const dbupdateobject = {
     useUnifiedTopology: true,
     useFindAndModify: false
 };
-
-// CONTROLLERS
-// film
-const filmsController = require('./controllers/films.js');
-app.use('/films', filmsController);
-// blog
-const blogsController = require('./controllers/blogs.js');
-app.use('/blogs', blogsController);
-
-app.use(express.urlencoded({extended:true}));
+const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
+
+app.use(express.urlencoded({extended:false}));
+
+//CONTROLLERS
+//Reviews
+const reviewsController = require('./controllers/reviews.js');
+app.use('/reviews', reviewsController);
 
 // Connect to Mongo
 mongoose.connect(process.env.DATABASE_URL, dbupdateobject);
@@ -32,9 +30,12 @@ db.on('open', () => {
     console.log('Connection made!');
 });
 
+
 app.get('/', (req, res) => {
   res.render('index.ejs');
 });
+
+
 
 
 
