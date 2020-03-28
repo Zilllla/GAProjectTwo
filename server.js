@@ -1,7 +1,6 @@
 
 const express = require('express');
 const app = express();
-const alfred = require('./models/alfred.js');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
@@ -10,15 +9,11 @@ const dbupdateobject = {
     useUnifiedTopology: true,
     useFindAndModify: false
 };
+
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 app.use(express.urlencoded({extended:false}));
-
-//CONTROLLERS
-//Reviews
-const reviewsController = require('./controllers/reviews.js');
-app.use('/reviews', reviewsController);
 
 // Connect to Mongo
 mongoose.connect(process.env.DATABASE_URL, dbupdateobject);
@@ -31,10 +26,26 @@ db.on('open', () => {
 });
 
 
+//CONTROLLERS
+//dialM
+const dialMController = require('./controllers/dialM.js');
+app.use('/dialM', dialMController);
+//northBy
+const northByController = require('./controllers/northBy.js');
+app.use('/northBy', northByController);
+//osyco
+const psychoController = require('./controllers/psycho.js');
+app.use('/psycho', psychoController);
+//strangers
+const strangersController = require('./controllers/strangers.js');
+app.use('/strangers', strangersController);
+//vertigo
+const vertigoController = require('./controllers/vertigo.js');
+app.use('/vertigo', vertigoController);
+
 app.get('/', (req, res) => {
   res.render('index.ejs');
 });
-
 
 
 
