@@ -12,7 +12,7 @@ body {
 }
 .header-img {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('showerHead.jpg');
-  height: 600px;
+  height: 350px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,11 +26,12 @@ body {
   transform: translate(-50%, -50%);
   color: var(--eggshell);
   font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 30px;
 }
 .nav {
   background-color: var(--grey);
   padding: 1px;
-  margin: -15px;
+  text-align: center;
 }
 .nav a {
   text-decoration: none;
@@ -39,9 +40,10 @@ body {
 .nav li {
   list-style: none;
   display: inline-flex;
-  justify-content: space-around;
+  /* justify-content: space-around;
   text-align: center;
-  padding-left: 21%;
+  padding-left: 21%; */
+  font-size: large;
 }
 .video {
   display: flex;
@@ -56,14 +58,54 @@ iframe {
   border: solid var(--eggshell) 5px;
 }
 .info-text {
-  height: 300px;
+  min-height: 300px;
   background-color: var(--eggshell);
+  padding: 76px;
+  font-size: larger;
 }
-.other {
-  background-color: var(--grey);
-  height: 300px;
-}
-footer {
+.resources {
   background: var(--dark-grey);
-  height: 300px;
+  min-height: 300px;
+  font-size: large;
+}
+.resources > h3 {
+  font-size: x-large;
+  text-align: center;
+}
+.resources li {
+  margin: 30px;
+  margin-left: 200px;
+}
+.showContainer {
+  padding-top: 20px;
+}
+.showContainer li {
+  list-style: none;
+}
+.showContainer h3 {
+  font-size: x-large;
+}
+.showContainer a {
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+}
+input[type=submit] {
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+.showContainer a, input[type=submit] {
+  font-size: large;
+  color: var(--black);
+  font-weight: 400;
+}
+.showContainer a:hover {
+  color: var(--eggshell);
+}
+input[type=submit]:hover {
+  color: var(--eggshell);
 }

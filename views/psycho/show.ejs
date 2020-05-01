@@ -14,19 +14,24 @@
     </div>
     <div class="nav">
       <ul>
+        <li>|</li>
         <li><a href="/">Home</a></li>
+        <li> | | </li>
         <li><a href="/psycho">Discussion</a></li>
+        <li> | | </li>
         <li><a href="#">About</a></li>
+        <li>|</li>
       </ul>
     </div>
-  <body>
-    <h1>Psycho</h1>
+
+    <h1>The Shower Scene Discussion Board</h1>
+    <div class="showContainer"
     <ul>
       <% for(let i = 0; i < reviews.length; i++) {%>
         <li>
-          <%=reviews[i].title%>
+          <h3><%=reviews[i].title%></h3>
           <br/>
-          <%=reviews[i].entry%>
+          <p><%=reviews[i].entry%></p>
 
           <a href="/psycho/<%=reviews[i]._id%>/edit">Edit</a>
 
@@ -36,7 +41,8 @@
         </li>
         <% } %>
    </ul>
-
+ </div>
+ <br/>
    <a href="/psycho/new">Create New Review</a>
   </body>
 </html>
