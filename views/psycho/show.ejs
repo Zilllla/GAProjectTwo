@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+    <title>The Shower Scene</title>
+  </head>
+  <body>
+    <div class="header-img">
+      <div class="header-text">
+        <h1>The Shower Scene</h1>
+      </div>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/psycho">Discussion</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  <body>
+    <h1>Psycho</h1>
+    <ul>
+      <% for(let i = 0; i < reviews.length; i++) {%>
+        <li>
+          <%=reviews[i].title%>
+          <br/>
+          <%=reviews[i].entry%>
+
+          <a href="/psycho/<%=reviews[i]._id%>/edit">Edit</a>
+
+          <form action="/psycho/<%=reviews[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Review" />
+          </form>
+        </li>
+        <% } %>
+   </ul>
+
+   <a href="/psycho/new">Create New Review</a>
+  </body>
+</html>

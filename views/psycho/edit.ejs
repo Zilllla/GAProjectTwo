@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+    <title>The Shower Scene</title>
+  </head>
+  <body>
+    <div class="header-img">
+      <div class="header-text">
+        <h1>The Shower Scene</h1>
+      </div>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/psycho">Discussion</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  <body>
+    <h1>Edit Review</h1>
+
+    <form action="/psycho/<%=reviews.id%>?_method=PUT" method="POST">
+      Title: <input type="text" name="title" value="<%=reviews.title%>" />
+      <br/>
+      Entry: <textarea name="entry"><%=reviews.entry%></textarea>
+      <br/>
+      <input type="submit" value="Submit Changes" />
+
+  </body>
+</html>
