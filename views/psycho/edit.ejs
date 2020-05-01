@@ -23,13 +23,17 @@
         <li>|</li>
       </ul>
     </div>
-    
-    <h1>Edit Review</h1>
+
+    <h1>Edit Discussion</h1>
 
     <form action="/psycho/<%=reviews.id%>?_method=PUT" method="POST">
-      Title: <input type="text" name="title" value="<%=reviews.title%>" />
-      <br/>
-      Entry: <textarea name="entry"><%=reviews.entry%></textarea>
+      <h2>Title</h2>
+
+      <input type="text" name="title" value="<%=reviews.title%>" />
+
+      <h2>Entry</h2>
+
+      <textarea name="entry"><%=reviews.entry%></textarea>
       <br/>
       <input type="submit" value="Submit Changes" />
 

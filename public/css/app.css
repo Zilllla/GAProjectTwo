@@ -109,3 +109,16 @@ input[type=submit] {
 input[type=submit]:hover {
   color: var(--eggshell);
 }
+input[type=text], textarea {
+  width: 100%;
+  border-radius: 4px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+input[type=text] {
+  font-size: large;
+}
+textarea {
+  height: 200px;
+  margin-bottom: 40px;
+}
